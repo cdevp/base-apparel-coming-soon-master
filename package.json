@@ -1,0 +1,24 @@
+{
+  "name": "base-apparel-coming-soon-master",
+  "version": "1.0.0",
+  "description": "frontendmentor base-apparel-coming-soon challenge",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.29.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass --watch style.scss style.css"
+ 	},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdevp/base-apparel-coming-soon-master.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cdevp/base-apparel-coming-soon-master/issues"
+  },
+  "homepage": "https://github.com/cdevp/base-apparel-coming-soon-master#readme"
+}
