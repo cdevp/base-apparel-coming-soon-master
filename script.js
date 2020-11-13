@@ -16,6 +16,8 @@ function emailValidationCheck() {
     }
     else {
         $('email-validation').style.display = 'none';
+        alert('We\'ll get in contact with you as soon as possible!')
+        $('input-box').value = '';
     }
 }
 

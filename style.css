@@ -17,11 +17,14 @@ html, body {
   font-size: 16px;
   height: 100%;
   width: 100%;
+  background: -webkit-linear-gradient(130deg, #f8bfbf, #ee8c8c);
+  background: -moz-linear-gradient(130deg, #f8bfbf, #ee8c8c);
+  background: -o-linear-gradient(130deg, #f8bfbf, #ee8c8c);
+  background: linear-gradient(130deg, #f8bfbf, #ee8c8c);
 }
 
 @media (min-width: 950px) {
   body {
-    background-color: #f96262;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,6 +147,7 @@ html, body {
     top: 1%;
   }
   body #content #box-1 #box-1-content #email-input #input-box:focus {
+    outline: none;
     border-color: #d36262;
     border-width: 2px;
     height: 67%;
@@ -164,7 +168,6 @@ html, body {
     box-shadow: 0px 16px 40px -10px #ce9797;
   }
   body #content #box-1 #box-1-content #email-input #submit-button:hover {
-    /*                            background-color: #fdc9c9; */
     background: -webkit-linear-gradient(90deg, #fff5f5 -100%, #f8bfbf);
     background: -moz-linear-gradient(90deg, #fff5f5 -100%, #f8bfbf);
     background: -o-linear-gradient(90deg, #fff5f5 -100%, #f8bfbf);
@@ -184,6 +187,16 @@ html, body {
     margin-left: 5.3%;
     font-size: 0.8rem;
   }
+  body #content #box-1 #box-1-content .attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+  }
+  body #content #box-1 #box-1-content .attribution a {
+    color: #3e52a3;
+  }
   body #content #box-2 {
     position: relative;
     width: 42.5%;
@@ -192,6 +205,9 @@ html, body {
     background-image: url("images/hero-desktop.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  body #content .mobile-attribution {
+    display: none;
   }
 }
 @media (max-width: 1250px) {
@@ -208,6 +224,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 375px;
+    min-height: 750px;
   }
   body #content {
     display: flex;
@@ -226,6 +244,8 @@ html, body {
   }
   body #content #gap-box #mobile-logo-img {
     width: 27.5%;
+    min-width: 100px;
+    max-width: 158px;
     margin-left: 8.2%;
   }
   body #content #box-1 {
@@ -235,17 +255,18 @@ html, body {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background: -webkit-linear-gradient(135deg, white, #fff5f5);
-    background: -moz-linear-gradient(135deg, white, #fff5f5);
-    background: -o-linear-gradient(135deg, white, #fff5f5);
-    background: linear-gradient(135deg, white, #fff5f5);
+    background: -webkit-linear-gradient(135deg, white -100%, #fff5f5);
+    background: -moz-linear-gradient(135deg, white -100%, #fff5f5);
+    background: -o-linear-gradient(135deg, white -100%, #fff5f5);
+    background: linear-gradient(135deg, white -100%, #fff5f5);
     overflow: hidden;
     order: 3;
   }
   body #content #box-1 #desktop-bg-gradient {
-    position: absolute;
-    height: 99%;
-    width: 100%;
+    display: none;
+  }
+  body #content #box-1 .attribution {
+    display: none;
   }
   body #content #box-1 #box-1-content {
     position: relative;
@@ -318,6 +339,7 @@ html, body {
     height: 69%;
     width: 90%;
     background: none;
+    outline: none;
     border: none;
     border-style: solid;
     border-color: #dbd1d2;
@@ -349,7 +371,6 @@ html, body {
     box-shadow: 0px 16px 40px -10px #ce9797;
   }
   body #content #box-1 #box-1-content #email-input #submit-button:hover {
-    /*                            background-color: #fdc9c9; */
     background: -webkit-linear-gradient(90deg, #fff5f5 -100%, #f8bfbf);
     background: -moz-linear-gradient(90deg, #fff5f5 -100%, #f8bfbf);
     background: -o-linear-gradient(90deg, #fff5f5 -100%, #f8bfbf);
@@ -364,9 +385,11 @@ html, body {
     display: none;
     flex-direction: row;
     align-items: flex-end;
+    align-self: flex-start;
     height: 3.3%;
     width: 67%;
-    margin-left: 5.3%;
+    margin-top: 1.5%;
+    margin-left: 14.1%;
     font-size: 0.8rem;
   }
   body #content #box-2 {
@@ -378,6 +401,17 @@ html, body {
     background-repeat: no-repeat;
     background-size: cover;
     order: 2;
+  }
+  body #content .mobile-attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+    z-index: 10;
+  }
+  body #content .mobile-attribution a {
+    color: #3e52a3;
   }
 }
 
