@@ -1,0 +1,436 @@
+$font-size: 16px;
+$font-family: 'Josefin Sans', sans-serif;
+$c-desaturated-red: hsl(0, 36%, 70%);
+$c-soft-red: hsl(0, 93%, 68%);
+$c-dark-red: hsl(0, 6%, 24%);
+$g-white-start: hsl(0, 0%, 100%);
+$g-white-end: hsl(0, 100%, 98%);
+$g-red-start: hsl(0, 80%, 86%);
+$g-red-end: hsl(0, 74%, 74%);
+$g-input-start: #dbd1d2;
+$g-input-end: #d8caca; 
+
+@mixin background-gradient($angle, $x1, $x2) {
+    background: -webkit-linear-gradient($angle, $x1, $x2);
+    background: -moz-linear-gradient($angle, $x1, $x2);
+    background: -o-linear-gradient($angle, $x1, $x2);
+    background: linear-gradient($angle, $x1, $x2);
+}
+
+@mixin animation-timing($property) {
+    -webkit-animation-timing-function: $property;
+    -moz-animation-timing-function: $property;
+    animation-timing-function: $property;
+}
+
+@keyframes pulse-animation {
+    0% {
+        height: 72.5%;
+        width: 22.5%;
+    }
+
+    40% {
+        height: 82.5%;
+        width: 25%;
+    }
+    100% {
+        height: 72.5%; 
+        width: 22.5%;
+    }
+}
+
+html, body {
+    font-family: $font-family;
+    font-size: $font-size;
+    height: 100%;
+    width: 100%;
+}
+
+@media (min-width: 950px) {
+    body {
+        background-color: $c-soft-red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        #content {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            min-height: 700px;
+            max-height: 800px;
+            justify-content: center;
+   
+            #gap-box {
+                display: none;
+            }
+
+            #box-1 {
+                display: flex;
+                position: relative;
+                height: 100%;
+                width: 57.75%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @include background-gradient(135deg, $g-white-start, $g-white-end); 
+                overflow: hidden;
+    
+                #desktop-bg-gradient {
+                    position: absolute;
+                    height: 99%;
+                    width: 100%;
+                }
+    
+                #box-1-content {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+                    width: 80.3%;
+                    left: 19.7%;
+                    margin-top: 7.7%;
+                    overflow: hidden;
+    
+                    #logo {
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        width: 122.8%;
+                        padding-left: 0.25%;
+    
+                        #logo-img {
+                            width: 19.025%;
+                            min-width: 162px; 
+                            max-width: 162px;
+                        }
+                    } 
+    
+                    #heading-content {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
+                        height: 42.2%;
+                        width: 67%;
+                        padding-left: 1px;
+                        overflow-wrap: break-word;
+                        font-size: 3.925rem;
+                        letter-spacing: 1.1rem;
+                        text-transform: uppercase;
+                        line-height: 4rem;
+                        padding-top: 0.5%;
+                        overflow: hidden;
+    
+                        #heading {
+                            display: inline-block;
+                            width: 100%;
+                            font-weight: 300;
+                            color: $c-desaturated-red;
+                        }
+    
+                        #sub-heading {
+                            display: inline-block;
+                            width: 100%;
+                            font-weight: 600;
+                            color: $c-dark-red;
+                            line-height: 4.370rem;
+                        }
+                    }
+                    
+                    #main-text {
+                        color: $c-desaturated-red;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 65%;
+                        height: 15.5%;
+                        padding-left: 3px;
+                        line-height: 1.8rem;
+                    }
+    
+                    #email-input {
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        height: 9.4%;
+                        width: 67%;
+                        padding-left: 1px;
+    
+    
+                            #input-box {
+                                color: $c-dark-red;
+                                display: flex;
+                                position: relative;
+                                height: 69.0%;
+                                width: 100%;   
+                                background: none;
+                                border: none;
+                                border-style: solid;
+                                border-color: $g-input-start;
+                                border-width: 1px;
+                                border-radius: 40px;
+                                padding-left: 7.3%;
+                                z-index: 0;
+                                top: 1%;
+                            }
+    
+                            #input-box:focus {
+                                border-color: #d36262;
+                                border-width: 2px;
+                                height: 67%;
+                            }
+    
+                            #submit-button {
+                                position: absolute;
+                                display: grid;
+                                align-items: center;
+                                justify-items: center;
+                                right: 0%;
+                                height: 74.5%;
+                                width: 22.5%;
+                                @include background-gradient(130deg, $g-red-start, $g-red-end);
+                                border-radius: 40px;
+                                box-shadow: 0px 16px 40px -10px $c-desaturated-red;
+                            }
+    
+                            #submit-button:hover {                                
+    /*                            background-color: #fdc9c9; */
+                                @include background-gradient(90deg, $g-white-end -100%, $g-red-start);
+                                bottom: -1%;
+                                height: 76%;
+                                box-shadow: 0px 16px 30px -2px $c-desaturated-red;
+                            }
+                    }
+    
+                    #email-validation {
+                        color: #d36262;
+                        font-weight: 400;
+                        display: none;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        height: 3.3%;
+                        width: 67%;
+                        margin-left: 5.3%;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+    
+            #box-2 {
+                position: relative;
+                width: 42.5%;
+                max-width: 610px;
+                background-color: $c-soft-red;
+                background-image: url("images/hero-desktop.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+    
+            }
+        }
+    }
+}    
+
+@media (max-width: 1250px) {
+    body #content #box-1 #box-1-content {
+        #heading-content {
+            width: 100%;    
+        }
+
+        #main-text {
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: 949px) {
+    body {
+        background-color: $c-soft-red;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        #content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100%;
+            width: 100%;
+           
+            #gap-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                order: 1;
+                height: 10.5%;
+                background-color: white;
+
+                #mobile-logo-img {
+                    width: 27.5%;
+                    margin-left: 8.2%;
+                }
+            }
+            #box-1 {
+                display: flex;
+                position: relative;
+                height: 58.2%;
+                width: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                @include background-gradient(135deg, $g-white-start, $g-white-end); 
+                overflow: hidden;
+                order: 3;
+    
+                #desktop-bg-gradient {
+                    position: absolute;
+                    height: 99%;
+                    width: 100%;
+                }
+    
+                #box-1-content {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 100%;
+                    width: 100%;
+                    margin-top: 2%;
+                    overflow: hidden;
+    
+                    #logo {
+                        display: none;
+                    } 
+    
+                    #heading-content {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        height: 39.0%;
+                        width: 100%;
+                        overflow-wrap: break-word;
+                        font-size: 2.555rem;
+                        text-align: center;
+                        letter-spacing: 0.65rem;
+                        margin-right: 0.80%;
+                        text-transform: uppercase;
+                        line-height: 2.555rem;
+                        overflow: hidden;
+    
+                        #heading {
+                            display: inline-block;
+                            width: 100%;
+                            font-weight: 300;
+                            color: $c-desaturated-red;
+                        }
+    
+                        #sub-heading {
+                            display: inline-block;
+                            width: 100%;
+                            font-weight: 600;
+                            color: $c-dark-red;
+                            line-height: 2.600rem;
+                            margin-right: 0.80%;
+                       }
+                    }
+                    
+                    #main-text {
+                        color: $c-desaturated-red;
+                        font-size: 0.885rem;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 85%;
+                        height: 26.0%;
+                        font-weight: 400;
+                        line-height: 1.37rem;
+                    }
+    
+                    #email-input {
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        height: 13.8%;
+                        width: 85%;
+                        padding-left: 1px;
+    
+    
+                            #input-box {
+                                color: $c-dark-red;
+                                display: flex;
+                                position: relative;
+                                height: 69.0%;
+                                width: 90%;   
+                                background: none;
+                                border: none;
+                                border-style: solid;
+                                border-color: $g-input-start;
+                                border-width: 1px;
+                                border-radius: 40px;
+                                padding-left: 7.3%;
+                                z-index: 0;
+                                top: 1%;
+                                left: 0%;
+                            }
+    
+                            #input-box:focus {
+                                border-color: #d36262;
+                                border-width: 2px;
+                                height: 67%;
+                            }
+    
+                            #submit-button {
+                                position: absolute;
+                                display: grid;
+                                align-items: center;
+                                justify-items: center;
+                                right: 1.25%;
+                                height: 74.5%;
+                                width: 20.5%;
+                                @include background-gradient(130deg, $g-red-start, $g-red-end);
+                                border-radius: 40px;
+                                box-shadow: 0px 16px 40px -10px $c-desaturated-red;
+                            }
+    
+                            #submit-button:hover {                                
+    /*                            background-color: #fdc9c9; */
+                                @include background-gradient(90deg, $g-white-end -100%, $g-red-start);
+                                bottom: -1%;
+                                height: 76%;
+                                box-shadow: 0px 16px 30px -2px $c-desaturated-red;
+                            }
+                    }
+    
+                    #email-validation {
+                        color: #d36262;
+                        font-weight: 400;
+                        display: none;
+                        flex-direction: row;
+                        align-items: flex-end;
+                        height: 3.3%;
+                        width: 67%;
+                        margin-left: 5.3%;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+    
+            #box-2 {
+                position: relative;
+                height: 31.3%;
+                width: 100%;
+                background-color: $c-soft-red;
+                background-image: url("images/hero-mobile.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                order: 2;
+    
+            }
+        }
+    }
+
+}
